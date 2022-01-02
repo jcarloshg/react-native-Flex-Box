@@ -1,29 +1,19 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native';
-import { Fab } from '../components/Fab';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import {Fab} from '../components/Fab';
 
 export const ContadorScreen = () => {
+  const [contador, setContador] = useState(10);
 
-    const [contador, setContador] = useState(10);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Contador: {contador}</Text>
 
-    return (
-        <View style={ styles.container }>
-            <Text style={ styles.title }>
-                Contador: { contador }
-            </Text>
+      <Fab title="+1" onPress={() => setContador(contador + 1)} />
 
-            <Fab 
-                title="+1"
-                onPress={ () => setContador( contador + 1 ) }
-            />
+      <Fab title="-1" position="bl" onPress={() => setContador(contador - 1)} />
 
-            <Fab 
-                title="-1"
-                position="bl"
-                onPress={ () => setContador( contador - 1 ) }
-            />
-
-            {/* <TouchableOpacity
+      {/* <TouchableOpacity
                 style={ styles.fabLocationBL }
                 onPress={ () => setContador( contador - 1 ) }
             >
@@ -32,19 +22,18 @@ export const ContadorScreen = () => {
                 </View>
             </TouchableOpacity>
              */}
-        </View>
-    )
-}
-
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center'
-    },
-    title: {
-        fontSize: 40,
-        top: -15,
-        textAlign: 'center',
-    },
-})
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 40,
+    top: -15,
+    textAlign: 'center',
+  },
+});
