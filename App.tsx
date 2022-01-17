@@ -4,6 +4,7 @@ import {SafeAreaView} from 'react-native';
 import {DimensionesScreen} from './src/screens/DimensionesScreen';
 import {FlexAlingItems} from './src/screens/FlexAlingItems';
 import {FlexAlingSelf} from './src/screens/FlexAlingSelf';
+import { FlexAlingWrap } from './src/screens/FlexAlingWrap';
 import {FlexScreen} from './src/screens/FlexScreen';
 import {PositionScreen} from './src/screens/PositionScreen';
 // import { HolaMundoScreen } from './src/screens/HolaMundoScreen';
@@ -19,7 +20,8 @@ export const App = () => {
       {/* <PositionScreen /> */}
       {/* <FlexScreen /> */}
       {/* <FlexAlingItems /> */}
-      <FlexAlingSelf />
+      {/* <FlexAlingSelf /> */}
+      <FlexAlingWrap />
     </SafeAreaView>
   );
 };
